@@ -78,11 +78,11 @@ mavenPublishing {
     signAllPublications()
     coordinates(
         groupId = group.toString(),
-        artifactId = "composablesheep-library",
+        artifactId = "composablesheep",
         version = version.toString(),
     )
     pom {
-        name = "Composable Sheep Library"
+        name = "Composable Sheep"
         description = "Library version of Composable Sheep!"
         url = "https://github.com/nicole-terc/composable-sheep-lib"
 

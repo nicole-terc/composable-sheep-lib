@@ -160,7 +160,7 @@ fun DrawScope.drawComposableSheep(
  */
 
 fun DrawScope.drawComposableSheep(
-    sheep: Sheep = Sheep(FluffStyle.Uniform(10)),
+    sheep: Sheep = Sheep(),
     fluffBrush: Brush,
     headColor: Color = sheep.headColor,
     legColor: Color = sheep.legColor,

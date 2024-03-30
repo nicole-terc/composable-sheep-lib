@@ -2,8 +2,8 @@ package dev.nstv.composablesheep.library.model
 
 import kotlin.random.Random
 
-const val MinAnglePercentage = 10.0
-const val MaxAnglePercentage = 20.0
+private const val MinAnglePercentage = 10.0
+private const val MaxAnglePercentage = 20.0
 
 /**
  * FluffStyle is used to define the style of the fluff.
@@ -20,7 +20,7 @@ sealed class FluffStyle(
         fluffChunksPercentages ?: buildFluffPercentages()
     }
 
-    data class Uniform(val numberOfFluffChunks: Int) : FluffStyle()
+    data class Uniform(val numberOfFluffChunks: Int = 10) : FluffStyle()
 
     data class UniformIntervals(
         val percentageIntervals: List<Double> = listOf(

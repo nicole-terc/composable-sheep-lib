@@ -8,7 +8,7 @@ const val DefaultHeadRotationAngle = 5f
 /**
  * A sheep model.
  *
- * @param fluffStyle - optional fluff style, default is random
+ * @param fluffStyle - optional fluff style, default is Uniform with 10 fluff chunks
  * @param headAngle - optional head rotation angle, default is 5f
  * @param glassesTranslation - optional glasses translation, default is 0f
  * @param legs - optional legs, default is two straight legs, other util option is fourLegs
@@ -19,7 +19,7 @@ const val DefaultHeadRotationAngle = 5f
  * @param glassesColor - optional glasses color, default is black
  */
 data class Sheep(
-    val fluffStyle: FluffStyle = FluffStyle.Random(),
+    val fluffStyle: FluffStyle = FluffStyle.Uniform(),
     val headAngle: Float = DefaultHeadRotationAngle,
     val glassesTranslation: Float = 0f,
     val legs: List<Leg> = twoLegsStraight(),
