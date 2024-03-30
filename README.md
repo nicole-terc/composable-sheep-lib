@@ -6,7 +6,7 @@ This library includes the standalone Compose functions and DrawScope extensions 
 
 | ComposableSheep | ComposableFluff | LoadingSheep |
 | --- | --- | --- |
-| <img  width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/5d7dae8c-5e8c-4cca-8ea9-49dcb6f4de07" > | <img width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/0b63c1c6-9b2d-429c-8c5f-a1dc577ebcb8"> | <img  width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/fb9bd8af-b20d-4565-ac9a-07a77ce3fbec"> |
+| <img  width=200 height=200 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/5d7dae8c-5e8c-4cca-8ea9-49dcb6f4de07" > | <img width=200 height=200 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/0b63c1c6-9b2d-429c-8c5f-a1dc577ebcb8"> | <img  width=200 height=200 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/fb9bd8af-b20d-4565-ac9a-07a77ce3fbec"> |
 
 If you're interested in learning more about the Sheep, take a look at the original project of [Composable Sheep](https://github.com/nicole-terc/composable-sheep)!
 
@@ -57,19 +57,6 @@ ComposableSheep(
 )
 ```
 
-You can always override the sheep colors of your ComposableSheep.
-
-```Kotlin
-ComposableSheep(
-    modifier = Modifier.size(300.dp),
-    sheep = sheep,
-    fluffColor = Color.Black,
-    headColor = Color.LightGray,
-    legColor = Color.Yellow,
-    eyeColor = Color.Red,
-    glassesColor = Color.Magenta,
-)
-```
 #### DrawScope Extensions
 
 Composable Sheep can also be drawn using drawComposableSheep extension function
@@ -120,9 +107,11 @@ ComposableSheep(
     glassesColor = Color.Magenta,
 )
 ```
-<img  width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/c8e9ee6b-8682-4733-ae67-2eee340c1e36" >
+<p align="center">
+<img  width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/c8e9ee6b-8682-4733-ae67-2eee340c1e36" >
+</p>
 
-
+### Fluff Brush
 If you want to take a more creative approach, the fluff can also be defined using a [Brush](https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Brush)
 
 ```Kotlin
@@ -131,8 +120,9 @@ ComposableSheep(
     fluffBrush = radialGradient(colors = listOf(Color.Black, Color.Yellow)),
 )
 ```
-<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/81b5aeda-f1e1-4e8a-b6c3-fe7ab259abf1">
-
+<p align="center">
+<img width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/81b5aeda-f1e1-4e8a-b6c3-fe7ab259abf1">
+</p>
 
 ### Sheep
 
@@ -170,8 +160,9 @@ ComposableSheep(
 ```
 
 - `numberOfFluffChunks` represents how many fluff chunks (each "bump") the final fluff will have. In this example, I'm defining a size of 10, meaning that the final body will have 10 fluff chunks of 10% (100%/10) of the body each. In angles, each chunk takes 360°/10 = 36° degrees.
-
-<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/8ef6f78f-8cd7-4666-b9a9-dc7ff74b3a1b">
+<p align="center">
+<img width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/8ef6f78f-8cd7-4666-b9a9-dc7ff74b3a1b">
+</p>
 
 </details>
 
@@ -193,7 +184,9 @@ ComposableSheep(
 
 - `percentageIntervals` represents the sequence of percentages the fluff chunks will follow. It will repeat the sequence until the 100% of the fluff is drawn.
 
-<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/8653c9a6-e4fe-426c-bcd1-068c5cfeef72">
+<p align="center">
+<img width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/8653c9a6-e4fe-426c-bcd1-068c5cfeef72">
+</p>
 
 </details>
 
@@ -215,7 +208,9 @@ ComposableSheep(
 
 - `minPercentage` & `maxPercentage` represent the range that each fluff chunk can take.
 
-<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/fba89e71-06a5-4845-b496-d54bc9bd9c2f">
+<p align="center">
+<img width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/fba89e71-06a5-4845-b496-d54bc9bd9c2f">
+</p>
 
 </details>
 
@@ -237,7 +232,9 @@ ComposableSheep(
 
 - `fluffChunksPercentages` represents the percentages the fluff chunks will follow. It will not repeat the sequence and will create a final chunk with the leftover percentage if needed. For the best results, ensure tht the percentages add up to 100%.
 
-<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/7fe46ad1-4fd8-496e-b999-2acb2c8f43e8">
+<p align="center">
+<img width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/7fe46ad1-4fd8-496e-b999-2acb2c8f43e8">
+</p>
 
 </details>
 
@@ -256,7 +253,9 @@ ComposableSheep(
     )
 )
 ```
-<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/f9399502-2cac-4463-8e43-9667734470bd">
+<p align="center">
+<img width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/f9399502-2cac-4463-8e43-9667734470bd">
+</p>
 
 </details>
 
@@ -271,7 +270,9 @@ ComposableSheep(
     )
 )
 ```
-<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/a56f4d74-a360-4547-b39b-400f9e95c2c6">
+<p align="center">
+<img width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/a56f4d74-a360-4547-b39b-400f9e95c2c6">
+</p>
 
 </details>
 
@@ -283,7 +284,9 @@ ComposableSheep(
     showGuidelines = true,
 )
 ```
-<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/f567e5a8-b46f-445e-be31-408496fdf82e">
+<p align="center">
+<img width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/f567e5a8-b46f-445e-be31-408496fdf82e">
+</p>
 
 ## License
 
