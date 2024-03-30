@@ -7,7 +7,6 @@ plugins {
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.dokka)
     alias(libs.plugins.vaniteckPublish)
-    id("signing")
 }
 
 kotlin {
