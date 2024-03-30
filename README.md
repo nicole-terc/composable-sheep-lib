@@ -1,14 +1,17 @@
-# Composable Sheep Library!
+# Composable Sheep Library! 
+[![Maven Central](https://img.shields.io/maven-central/v/dev.nstv/composablesheep)](https://central.sonatype.com/artifact/dev.nstv/composablesheep) [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
-<i>What nobody asked, now in your hands (and Maven)!</i>
+<i>What nobody asked for, now in your hands (and Maven)!</i> 
 
-This library includes the standalone Compose functions and DrawScope extensions for Composable Sheep, ComposableFluff and Loading Sheep!
+This library includes the standalone functions for Composable Sheep, Composable Fluff and Loading Sheep. 
 
 | ComposableSheep | ComposableFluff | LoadingSheep |
 | --- | --- | --- |
 | <img  width=200 height=200 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/5d7dae8c-5e8c-4cca-8ea9-49dcb6f4de07" > | <img width=200 height=200 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/0b63c1c6-9b2d-429c-8c5f-a1dc577ebcb8"> | <img  width=200 height=200 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/fb9bd8af-b20d-4565-ac9a-07a77ce3fbec"> |
 
-If you're interested in learning more about the Sheep, take a look at the original project of [Composable Sheep](https://github.com/nicole-terc/composable-sheep)!
+
+> Disclaimer: No animations have been migrated from the orignal [Composable Sheep](https://github.com/nicole-terc/composable-sheep), <b>yet</b>.
+
 
 ## Installation
 
@@ -286,6 +289,13 @@ ComposableSheep(
 ```
 <p align="center">
 <img width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/f567e5a8-b46f-445e-be31-408496fdf82e">
+</p>
+
+## Want more?
+If you're interested in learning more about the Sheep or want some inspiration about what to do with them, take a look at the original [Composable Sheep Repository](https://github.com/nicole-terc/composable-sheep)!
+
+<p align="center">
+<img width=300 src="https://user-images.githubusercontent.com/26582588/177159385-bd56c795-d0ec-4011-8da6-1b3272aee468.gif">
 </p>
 
 ## License
