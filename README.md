@@ -2,13 +2,19 @@
 
 <i>What nobody asked, now in your hands (and Maven)!</i>
 
-This library includes the standalone Compose functions and DrawScope extensions for Composable Sheep and Loading Sheep!
+This library includes the standalone Compose functions and DrawScope extensions for Composable Sheep, ComposableFluff and Loading Sheep!
+
+| ComposableSheep | ComposableFluff | LoadingSheep |
+| --- | --- | --- |
+| <img  width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/5d7dae8c-5e8c-4cca-8ea9-49dcb6f4de07" > | <img width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/0b63c1c6-9b2d-429c-8c5f-a1dc577ebcb8"> | <img  width=300 height=300 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/fb9bd8af-b20d-4565-ac9a-07a77ce3fbec"> |
+
+If you're interested in learning more about the Sheep, take a look at the original project of [Composable Sheep](https://github.com/nicole-terc/composable-sheep)!
 
 ## Installation
 
 ### Kotlin Multiplatform Projects
 
-Just add the dependency in your app `build.gradle` file. Currently supported: Android, iOS & desktop (no wasm!).
+Just add the dependency in your common module `build.gradle` file. Currently supported: Android, iOS & desktop (no wasm!).
 
 ```Kotlin
 commonMain.dependencies {
@@ -18,7 +24,7 @@ commonMain.dependencies {
 
 ### Android Native
 
-Just add the dependency in your app `build.gradle` file.
+Just add the dependency in your module `build.gradle` file.
 
 ```Kotlin
 dependencies {
@@ -28,7 +34,7 @@ dependencies {
 
 ## How to use
 
-> <div style="padding:12px">⚠️ <b>IMPORTANT:</b> ComposableSheep use <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Canvas">Canvas</a> under the hood. It's mandatory to specify the <b>size</b> strategy of the composables (<i>size</i>, <i>fillMaxSize</i>,...)! </div>
+> ComposableSheep use <a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Canvas">Canvas</a> under the hood! <br/> It's mandatory to specify the <b>size</b> strategy of the composables (size, fillMaxSize,...) 
 
 ### Composable Sheep
 
@@ -64,7 +70,6 @@ ComposableSheep(
     glassesColor = Color.Magenta,
 )
 ```
-
 #### DrawScope Extensions
 
 Composable Sheep can also be drawn using drawComposableSheep extension function
@@ -75,6 +80,17 @@ Box(modifier = Modifier.size(300.dp)
         drawComposableSheep(sheep = sheep)
     }
 )
+```
+
+### Loading Sheep
+Renders a spinning ComposableSheep. For a best result, defining the composable size strategy is recommended. 
+
+```Kotlin
+    LoadingSheep(
+        modifier = Modifier.size(300.dp),
+        spinning = true,
+        fluffColor = sheep.fluffColor
+    )
 ```
 
 ### Fluff
@@ -104,6 +120,8 @@ ComposableSheep(
     glassesColor = Color.Magenta,
 )
 ```
+<img  width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/c8e9ee6b-8682-4733-ae67-2eee340c1e36" >
+
 
 If you want to take a more creative approach, the fluff can also be defined using a [Brush](https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Brush)
 
@@ -113,6 +131,8 @@ ComposableSheep(
     fluffBrush = radialGradient(colors = listOf(Color.Black, Color.Yellow)),
 )
 ```
+<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/81b5aeda-f1e1-4e8a-b6c3-fe7ab259abf1">
+
 
 ### Sheep
 
@@ -138,7 +158,7 @@ FluffStyle is used to define the style of the fluff, how each of the fluff chunk
 
 The different types of fluffy styles are:
 
-<details open>
+<details>
 <summary><b>Uniform</b> (default)</summary>
 The fluff is divided into a number of chunks of equal size.
 
@@ -150,9 +170,12 @@ ComposableSheep(
 ```
 
 - `numberOfFluffChunks` represents how many fluff chunks (each "bump") the final fluff will have. In this example, I'm defining a size of 10, meaning that the final body will have 10 fluff chunks of 10% (100%/10) of the body each. In angles, each chunk takes 360°/10 = 36° degrees.
+
+<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/8ef6f78f-8cd7-4666-b9a9-dc7ff74b3a1b">
+
 </details>
 
-<details open>
+<details>
 <summary><b>UniformIntervals</b></summary>
 
 The fluff is divided into a number of chunks of iterating size according to the given intervals.
@@ -169,9 +192,12 @@ ComposableSheep(
 ```
 
 - `percentageIntervals` represents the sequence of percentages the fluff chunks will follow. It will repeat the sequence until the 100% of the fluff is drawn.
+
+<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/8653c9a6-e4fe-426c-bcd1-068c5cfeef72">
+
 </details>
 
-<details open>
+<details>
 <summary><b>Random</b></summary>
 The fluff is divided into a number of chunks of random size.
 
@@ -188,9 +214,12 @@ ComposableSheep(
 ```
 
 - `minPercentage` & `maxPercentage` represent the range that each fluff chunk can take.
+
+<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/fba89e71-06a5-4845-b496-d54bc9bd9c2f">
+
 </details>
 
-<details open>
+<details>
 <summary><b>Manual</b></summary>
 
 The fluff is divided into a number of chunks of size defined by the user.
@@ -207,13 +236,16 @@ ComposableSheep(
 ```
 
 - `fluffChunksPercentages` represents the percentages the fluff chunks will follow. It will not repeat the sequence and will create a final chunk with the leftover percentage if needed. For the best results, ensure tht the percentages add up to 100%.
+
+<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/7fe46ad1-4fd8-496e-b999-2acb2c8f43e8">
+
 </details>
 
 #### Legs
 
 You can potentially define how the legs should be built. Two helper functions are already provided:
 
-<details open>
+<details>
 <summary><b>twoLegsStraight</b> (default)</summary>
 
 ```Kotlin
@@ -224,10 +256,11 @@ ComposableSheep(
     )
 )
 ```
+<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/f9399502-2cac-4463-8e43-9667734470bd">
 
 </details>
 
-<details open>
+<details>
 <summary><b>fourLegs</b></summary>
 
 ```Kotlin
@@ -238,10 +271,19 @@ ComposableSheep(
     )
 )
 ```
+<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/a56f4d74-a360-4547-b39b-400f9e95c2c6">
 
 </details>
 
 ### Guidelines
+Most functions accept the optional flag to showGuidelines. In case you want to take a look at the shapes being used, just change the value to true!
+```Kotlin
+ComposableSheep(
+    modifier = Modifier.size(300.dp),
+    showGuidelines = true,
+)
+```
+<img width=400 height=400 src="https://github.com/nicole-terc/composable-sheep-lib/assets/26582588/f567e5a8-b46f-445e-be31-408496fdf82e">
 
 ## License
 
