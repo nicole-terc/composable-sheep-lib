@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Composable_Sheep_Library"
 include(":composableSheep")
+include(":app")

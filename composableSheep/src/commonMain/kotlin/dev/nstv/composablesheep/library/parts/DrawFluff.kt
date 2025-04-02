@@ -135,7 +135,7 @@ fun getFluffPath(
 
     fluffPoints.forEach { fluffPoint ->
         val controlPoint = getCurveControlPoint(currentPoint, fluffPoint, circleCenterOffset)
-        quadraticBezierTo(controlPoint.x, controlPoint.y, fluffPoint.x, fluffPoint.y)
+        quadraticTo(controlPoint.x, controlPoint.y, fluffPoint.x, fluffPoint.y)
         currentPoint = fluffPoint
     }
 }

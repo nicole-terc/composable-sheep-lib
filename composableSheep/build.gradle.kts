@@ -1,10 +1,12 @@
 import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.compose.ExperimentalComposeLibrary
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.composeCompiler)
     alias(libs.plugins.dokka)
     alias(libs.plugins.vaniteckPublish)
 }
@@ -12,10 +14,8 @@ plugins {
 kotlin {
     androidTarget {
         publishLibraryVariants("release", "debug")
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_11)
         }
     }
 
@@ -59,19 +59,19 @@ kotlin {
 
 android {
     namespace = "dev.nstv.composablesheep.library"
-    compileSdk = 34
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 25
+        minSdk = libs.versions.android.minSdk.get().toInt()
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }
 
 // Publishing
 group = "dev.nstv"
-version = "1.0.0"
+version = libs.versions.version.get()
 
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
