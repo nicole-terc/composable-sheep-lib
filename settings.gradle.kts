@@ -9,6 +9,7 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
+        mavenLocal()
         google()
         mavenCentral()
     }
@@ -16,4 +17,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Composable_Sheep_Library"
 include(":composableSheep")
-include(":app")
+include(":demoapp")

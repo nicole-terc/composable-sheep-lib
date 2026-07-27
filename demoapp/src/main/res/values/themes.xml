@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Composable_Sheep_Library" parent="android:Theme.Material.Light.NoActionBar"/>
+</resources>
